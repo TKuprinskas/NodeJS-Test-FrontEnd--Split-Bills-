@@ -1,4 +1,5 @@
 const url = "http://localhost:3000/v1/auth/register";
+const doRegister = "https://split-bills-backend-5naym.ondigitalocean.app/register";
 
 const form = document.getElementById("register");
 form.addEventListener("submit", (e) => {
@@ -7,7 +8,7 @@ form.addEventListener("submit", (e) => {
   const email = e.target.elements.email.value.trim();
   const password = e.target.elements.password.value.trim();
 
-  fetch(url, {
+  fetch(doRegister, {
     method: "POST",
     headers: {
       "Content-type": "application/json",
