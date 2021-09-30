@@ -1,5 +1,5 @@
 // const url = "http://localhost:3000/v1/auth/register";
-const url = "https://split-bills-backend-5naym.ondigitalocean.app/back/v1/auth/register";
+const url = "https://split-bill-backend-63jrj.ondigitalocean.app/back/v1/auth/register";
 
 const form = document.getElementById("register");
 form.addEventListener("submit", (e) => {
