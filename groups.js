@@ -1,6 +1,18 @@
 // const urlContent = "http://localhost:3000/v1/groups/groups";
 const urlContent = "https://split-bill-backend-63jrj.ondigitalocean.app/back/v1/groups/groups";
 const token = window.localStorage.getItem("token");
+const tokenUserId = getUserInfo(token).user_id;
+
+function getUserInfo() {
+  let payload;
+  if (token) {
+    payload = token.split(".")[1];
+    payload = window.atob(payload);
+    return JSON.parse(payload);
+  } else {
+    return null;
+  }
+}
 
 showData();
 addGroup();
@@ -36,6 +48,7 @@ function showInfo(data) {
     const content = document.createElement("p");
     content.textContent = `${item.name}`;
 
+    if (tokenUserId == item.user_id) {
     const delBTN = document.createElement("button");
     delBTN.textContent = "DELETE";
     delBTN.addEventListener("click", () => {
@@ -52,8 +65,12 @@ function showInfo(data) {
           });
       }
     });
+       section.append(delBTN);
+    } else {
+      section.append(title, content);
+    }
 
-    section.append(title, content, delBTN);
+    
     output.append(section);
   });
 }
