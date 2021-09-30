@@ -1,5 +1,5 @@
 // const urlContent = "http://localhost:3000/v1/accounts/accounts";
-const urlContent = "https://split-bills-backend-5naym.ondigitalocean.app/back/v1/accounts/accounts";
+const urlContent = "https://split-bill-backend-63jrj.ondigitalocean.app/back/v1/accounts/accounts";
 const token = window.localStorage.getItem("token");
 
 showData();
