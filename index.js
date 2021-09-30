@@ -24,7 +24,6 @@ form.addEventListener("submit", (e) => {
         return alert(data.err);
       }
       localStorage.setItem("token", `${data.token}`);
-    console.log(data.token);
       setTimeout(() => {
         window.location.href = "mygroups.html";
       }, 1000);
