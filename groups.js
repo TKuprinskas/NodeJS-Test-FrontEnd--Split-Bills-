@@ -48,29 +48,32 @@ function showInfo(data) {
     const content = document.createElement("p");
     content.textContent = `${item.name}`;
 
+    const btnDiv = document.createElement("div");
+    btnDiv.classList = "btndiv";
     if (tokenUserId == item.user_id) {
-    const delBTN = document.createElement("button");
-    delBTN.textContent = "DELETE";
-    delBTN.addEventListener("click", () => {
-      const delConfirm = confirm("Do you want to delete this item?");
+      const delBTN = document.createElement("button");
+      delBTN.textContent = "DELETE";
+      delBTN.addEventListener("click", () => {
+        const delConfirm = confirm("Do you want to delete this item?");
 
-      if (delConfirm) {
-        fetch(`${urlContent}/${item.id}`, {
-          method: "DELETE",
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            section.remove();
-            alert(`Group ${item.name} has been removed from your account`);
-          });
-      }
-    });
-       section.append(delBTN);
+        if (delConfirm) {
+          fetch(`${urlContent}/${item.id}`, {
+            method: "DELETE",
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              section.remove();
+              alert(`Group ${item.name} has been removed from your account`);
+            });
+        }
+      });
+
+      btnDiv.append(delBTN);
     } else {
-      section.append(title, content);
+      btnDiv.append();
     }
 
-    
+    section.append(title, content, btnDiv);
     output.append(section);
   });
 }
