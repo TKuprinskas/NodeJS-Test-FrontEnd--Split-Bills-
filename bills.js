@@ -1,5 +1,7 @@
 const urlContent = "http://localhost:3000/v1/bills/bills";
+const doContent = https://split-bills-backend-5naym.ondigitalocean.app/bills";
 const totalURL = "http://localhost:3000/v1/bills/total";
+const doTotal = "https://split-bills-backend-5naym.ondigitalocean.app/total";
 const queryString = window.location.search;
 const params = queryString.split("=")[1];
 const token = window.localStorage.getItem("token");
@@ -10,7 +12,7 @@ total();
 
 function total() {
   if (token) {
-    fetch(`${totalURL}/${params}`, {
+    fetch(`${doTotal}/${params}`, {
       headers: {
         authorization: `Bearer ${token}`,
       },
@@ -35,7 +37,7 @@ function getTotal(data) {
 
 function showData() {
   if (token) {
-    fetch(`${urlContent}/${params}`, {
+    fetch(`${doContent}/${params}`, {
       headers: {
         authorization: `Bearer ${token}`,
       },
