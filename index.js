@@ -19,11 +19,12 @@ form.addEventListener("submit", (e) => {
   })
     .then((res) => res.json())
     .then((data) => {
-    console.log(token);
+    
       if (data.err) {
         return alert(data.err);
       }
       localStorage.setItem("token", `${data.token}`);
+    console.log(token);
       setTimeout(() => {
         window.location.href = "mygroups.html";
       }, 1000);
