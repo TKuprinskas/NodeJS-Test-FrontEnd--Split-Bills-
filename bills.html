@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Split Bills</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css"
+    />
+    <script defer src="bills.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="menu">
+        <div class="menu1">
+          <a id="showgroups" href="groups.html">Show Groups</a>
+          <a id="showmygroups" href="mygroups.html">My Groups</a>
+        </div>
+        <div id="menu2">
+          <a id="signout">Sign Out</a>
+        </div>
+      </div>
+      <div class="header">
+        <div class="logo">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/300px-Google_%22G%22_Logo.svg.png"
+            alt="googlelogo"
+          />
+        </div>
+        <div class="logotext">Split Bill</div>
+      </div>
+    </header>
+    <main>
+      <h1>Detailed bill:</h1>
+      <div id="output">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Description</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <h3 id="totalSum"></h3>
+      </div>
+      <div class="addgroup">
+        <h1>Add Bill:</h1>
+        <form id="addbill">
+          <div class="input-group">
+            <label for="amount">Amount:</label>
+            <input type="text" name="amount" id="amount" required />
+          </div>
+          <div class="input-group">
+            <label for="description">Description:</label>
+            <input type="text" name="description" id="description" required />
+          </div>
+          <button type="submit">ADD</button>
+        </form>
+      </div>
+    </main>
+    <footer>CopyRight @ 2021 Split Bills</footer>
+  </body>
+</html>
