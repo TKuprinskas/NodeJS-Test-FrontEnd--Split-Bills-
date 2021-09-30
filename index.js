@@ -1,4 +1,5 @@
 const url = "http://localhost:3000/v1/auth/login";
+const doLogin = "https://split-bills-backend-5naym.ondigitalocean.app/login";
 
 const form = document.getElementById("login");
 form.addEventListener("submit", (e) => {
@@ -6,7 +7,7 @@ form.addEventListener("submit", (e) => {
   const email = e.target.elements.email.value;
   const password = e.target.elements.password.value;
 
-  fetch(url, {
+  fetch(doLogin, {
     method: "POST",
     headers: {
       "Content-type": "application/json",
